@@ -1,0 +1,2 @@
+"https://{default}/": { type: upstream, upstream: "symfony-rmq-benchmark:http" }
+"http://{default}/": { type: redirect, to: "https://{default}/" }
