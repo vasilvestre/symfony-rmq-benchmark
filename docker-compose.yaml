@@ -1,0 +1,33 @@
+version: '3'
+
+services:
+    php:
+        build:
+          context: ./
+        volumes:
+          - .:/app
+        working_dir: /app
+        environment:
+            WEB_DOCUMENT_ROOT: /app/public
+        ports:
+        - 8080:80
+        - 8443:443
+    rabbitmq:
+        image: rabbitmq:3-management
+        hostname: rabbit1
+        environment:
+            RABBITMQ_ERLANG_COOKIE: SWQOKODSQALRPCLNMEQG
+            RABBITMQ_DEFAULT_USER: rabbitmq
+            RABBITMQ_DEFAULT_PASS: rabbitmq
+            RABBITMQ_DEFAULT_VHOST: /
+        ports:
+        - 15672:15672
+        labels:
+            NAME: rabbitmq1
+        #volumes:
+        # - ./enabled_plugins:/etc/rabbitmq/enabled_plugins
+
+    fakesmtp:
+        image: djfarrelly/maildev
+        ports:
+        - 8081:80
