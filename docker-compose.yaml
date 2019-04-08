@@ -10,8 +10,8 @@ services:
         environment:
             WEB_DOCUMENT_ROOT: /app/public
         ports:
-        - 8080:80
-        - 8443:443
+        - 8880:80
+        - 8883:443
     rabbitmq:
         image: rabbitmq:3-management
         hostname: rabbit

@@ -35,7 +35,7 @@ $ docker-compose exec php composer install
 ---
 
 ## Usage 
-Launch http request to `http://localhost:8080/mail/send` with parameters such as `?from=test@test.com&to=test@test.com&content=Test`
+Launch http request to `http://localhost:8880/mail/send` with parameters such as `?from=test@test.com&to=test@test.com&content=Test`
 
 ---
 
