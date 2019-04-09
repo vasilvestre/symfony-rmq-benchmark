@@ -16,7 +16,6 @@ stages:
   before_script:
   - docker-compose up -d
   - docker-compose exec -T php sh -c "cd /app && composer install"
-  - docker-compose exec -T php sh -c "cd /app && bin/console doctrine:migrations:migrate --no-interaction --allow-no-migration"
 
 cache:
   key: ${CI_COMMIT_REF_SLUG}
