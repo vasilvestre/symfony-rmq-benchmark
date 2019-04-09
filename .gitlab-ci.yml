@@ -25,15 +25,11 @@ cache:
 
 api_phpstan:
   stage: lint
-  tags:
-  - ouag
   script:
   - docker run --rm -v $pwd/api/api/src:/app phpstan/phpstan analyse --level 7 -vvv --no-progress /app/
 
 api_phpunit:
   <<: *build_docker
   stage: test
-  tags:
-  - ouag
   script:
   - docker-compose exec -T php sh -c "cd srv/api/ && php bin/phpunit --coverage-text --colors=never"
