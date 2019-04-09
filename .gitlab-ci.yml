@@ -1,1 +1,39 @@
+image: "tmaier/docker-compose:latest"
 
+services:
+- docker:dind
+
+variables:
+  DOCKER_DRIVER: overlay2
+
+stages:
+- lint
+- test
+
+# Install general dependencies
+# Only for dev env, not prod
+.build_docker: &build_docker
+  before_script:
+  - docker-compose up -d
+  - docker-compose exec -T php sh -c "cd srv/api/ && composer install"
+  - docker-compose exec -T php sh -c "cd srv/api/ && bin/console doctrine:migrations:migrate --no-interaction --allow-no-migration"
+
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+  - api/api/vendor/
+
+api_phpstan:
+  stage: lint
+  tags:
+  - ouag
+  script:
+  - docker run --rm -v $pwd/api/api/src:/app phpstan/phpstan analyse --level 7 -vvv --no-progress /app/
+
+api_phpunit:
+  <<: *build_docker
+  stage: test
+  tags:
+  - ouag
+  script:
+  - docker-compose exec -T php sh -c "cd srv/api/ && php bin/phpunit --coverage-text --colors=never"
