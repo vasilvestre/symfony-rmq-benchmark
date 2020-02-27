@@ -10,7 +10,7 @@
         "symfony/console": "4.4.*",
         "symfony/dotenv": "4.2.*",
         "symfony/flex": "^1.1",
-        "symfony/framework-bundle": "4.2.*",
+        "symfony/framework-bundle": "4.3.*",
         "symfony/maker-bundle": "^1.11",
         "symfony/messenger": "4.3.*",
         "symfony/profiler-pack": "^1.0",
