@@ -1864,16 +1864,16 @@
         },
         {
             "name": "symfony/flex",
-            "version": "v1.2.0",
+            "version": "v1.6.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/flex.git",
-                "reference": "7f04fb50c5da6d020e4df743b4c764c188bb24bf"
+                "reference": "e4f5a2653ca503782a31486198bd1dd1c9a47f83"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/flex/zipball/7f04fb50c5da6d020e4df743b4c764c188bb24bf",
-                "reference": "7f04fb50c5da6d020e4df743b4c764c188bb24bf",
+                "url": "https://api.github.com/repos/symfony/flex/zipball/e4f5a2653ca503782a31486198bd1dd1c9a47f83",
+                "reference": "e4f5a2653ca503782a31486198bd1dd1c9a47f83",
                 "shasum": ""
             },
             "require": {
@@ -1882,14 +1882,14 @@
             },
             "require-dev": {
                 "composer/composer": "^1.0.2",
-                "symfony/dotenv": "^3.4|^4.0",
-                "symfony/phpunit-bridge": "^3.4.19|^4.1.8",
-                "symfony/process": "^2.7|^3.0|^4.0"
+                "symfony/dotenv": "^3.4|^4.0|^5.0",
+                "symfony/phpunit-bridge": "^3.4.19|^4.1.8|^5.0",
+                "symfony/process": "^2.7|^3.0|^4.0|^5.0"
             },
             "type": "composer-plugin",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.2-dev"
+                    "dev-master": "1.5-dev"
                 },
                 "class": "Symfony\\Flex\\Flex"
             },
@@ -1909,7 +1909,7 @@
                 }
             ],
             "description": "Composer plugin for Symfony",
-            "time": "2019-02-21T11:31:25+00:00"
+            "time": "2020-01-30T12:06:45+00:00"
         },
         {
             "name": "symfony/framework-bundle",
